@@ -8,5 +8,5 @@ Each edition has its own branch, named `editions/[EDITION]`. The default branch 
 
 | Branch                                                                          | Edition | Release Date |
 | ------------------------------------------------------------------------------- |:-------:|:------------:|
-| [editions/2.0](https://github.com/raywenderlich/ka-materials/tree/editions/2.0) | 2.0     | 2019-09 -30   |
+| [editions/2.0](https://github.com/raywenderlich/ka-materials/tree/editions/2.0) | 2.0     | 2019-09-30   |
 
