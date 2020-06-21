@@ -1,0 +1,13 @@
+*.iml
+.gradle/
+build/
+.idea/
+.DS_STORE
+local.properties
+
+# Custom
+gitpull.sh
+gitupdate.sh
+setup_demo.py
+xcuserdata/
+*.xcworkspacedata
