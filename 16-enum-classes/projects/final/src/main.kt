@@ -40,10 +40,10 @@ enum class DayOfTheWeek(val isWeekend: Boolean = false) {
   Sunday(true);
 
   fun daysUntil(other: DayOfTheWeek): Int {
-    if (this.ordinal < other.ordinal) {
-      return other.ordinal - this.ordinal
+    return if (this.ordinal < other.ordinal) {
+      other.ordinal - this.ordinal
     } else {
-      return other.ordinal - this.ordinal + DayOfTheWeek.values().count()
+      other.ordinal - this.ordinal + DayOfTheWeek.values().count()
     }
   }
 
