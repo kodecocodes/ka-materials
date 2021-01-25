@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,6 +28,30 @@
  * THE SOFTWARE.
  */
 
+interface Area {
+  val area: Double
+}
+
 fun main() {
 
+  class Square(val side: Double) : Area {
+    override val area: Double
+      get() = side * side
+  }
+
+  class Triangle(val base: Double, val height: Double) : Area {
+    override val area: Double
+      get() = 0.5 * base * height
+  }
+
+  class Circle(val radius: Double) : Area {
+    override val area: Double
+      get() = kotlin.math.PI * radius * radius
+  }
+
+  val square = Square(4.0)
+  val triangle = Triangle(3.0, 5.0)
+  val circle = Circle(2.0)
+  val shapes = arrayOf(square, triangle, circle)
+  println(shapes.map { it.area })
 }
