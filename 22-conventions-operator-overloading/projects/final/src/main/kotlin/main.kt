@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,50 +28,52 @@
  * THE SOFTWARE.
  */
 
-data class Employee(val company: Company, val name: String, var salary: Int) : Comparable<Employee> {
+fun main() {
+  // your company
+  val company = Company("MyOwnCompany")
 
-  operator fun plusAssign(increaseSalary: Int) {
-    salary += increaseSalary
-    println("$name got a raise to $$salary")
+  // departments
+  val developmentDepartment = Department("Development")
+  val qaDepartment = Department("Quality Assurance")
+  val hrDepartment = Department("Human Resources")
+
+  // employees
+  var Julia = Employee(company, "Julia", 100_000)
+  var John = Employee(company, "John", 86_000)
+  var Peter = Employee(company, "Peter", 100_000)
+
+  var Sandra = Employee(company, "Sandra", 75_000)
+  var Thomas = Employee(company, "Thomas", 73_000)
+  var Alice = Employee(company, "Alice", 70_000)
+
+  var Bernadette = Employee(company, "Bernadette", 66_000)
+  var Mark = Employee(company, "Mark", 66_000)
+
+  company += developmentDepartment
+  company += qaDepartment
+  company += hrDepartment
+
+  developmentDepartment += Julia
+  developmentDepartment += John
+  developmentDepartment += Peter
+
+  qaDepartment += Sandra
+  qaDepartment += Thomas
+  qaDepartment += Alice
+
+  hrDepartment += Bernadette
+  hrDepartment += Mark
+
+  qaDepartment -= Thomas
+
+  if (Thomas !in qaDepartment) {
+    println("${Thomas.name} no longer works here")
   }
 
-  operator fun minusAssign(decreaseSalary: Int) {
-    salary -= decreaseSalary
-    println("$name's salary decreased to $$salary")
-  }
+  ++Julia
+  --Peter
+  Mark += 2500
+  Alice -= 2000
 
-  operator fun plus(employee: Employee): List<Employee> {
-    return listOf(this, employee)
-  }
-
-  operator fun dec(): Employee {
-    salary -= 5000
-    println("$name's salary decreased to $$salary")
-    return this
-  }
-
-  operator fun inc(): Employee {
-    salary += 5000
-    println("$name got a raise to $$salary")
-    return this
-  }
-
-  operator fun rangeTo(other: Employee): List<Employee> {
-    val currentIndex = company.allEmployees.indexOf(this)
-    val otherIndex = company.allEmployees.indexOf(other)
-
-    if (currentIndex >= otherIndex) {
-      return emptyList()
-    }
-
-    return company.allEmployees.slice(currentIndex..otherIndex)
-  }
-
-  override operator fun compareTo(other: Employee): Int {
-    return when (other) {
-      this -> 0
-      else -> name.compareTo(other.name)
-    }
-  }
-
+  print((Alice..Mark).joinToString { it.name })
 }

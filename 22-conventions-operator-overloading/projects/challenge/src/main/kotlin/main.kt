@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,5 +28,52 @@
  * THE SOFTWARE.
  */
 
-class Company(val name: String) {
+fun main() {
+  // your company
+  val company = Company("MyOwnCompany")
+
+  // departments
+  val developmentDepartment = Department("Development")
+  val qaDepartment = Department("Quality Assurance")
+  val hrDepartment = Department("Human Resources")
+
+  // employees
+  var Julia = Employee(company, "Julia", 100_000)
+  var John = Employee(company, "John", 86_000)
+  var Peter = Employee(company, "Peter", 100_000)
+
+  var Sandra = Employee(company, "Sandra", 75_000)
+  var Thomas = Employee(company, "Thomas", 73_000)
+  var Alice = Employee(company, "Alice", 70_000)
+
+  var Bernadette = Employee(company, "Bernadette", 66_000)
+  var Mark = Employee(company, "Mark", 66_000)
+
+  company += developmentDepartment
+  company += qaDepartment
+  company += hrDepartment
+
+  developmentDepartment.hire(Julia + John + Peter)
+  qaDepartment.hire(Sandra + Thomas + Alice)
+  hrDepartment.hire(Bernadette + Mark)
+
+//  Which gets translated into:
+//  developmentDepartment.hire(CollectionsKt.plus((Collection)Julia.plus(John), Peter));
+//  qaDepartment.hire(CollectionsKt.plus((Collection)Sandra.plus(Thomas), Alice));
+//  hrDepartment.hire(Bernadette.plus(Mark));
+//  Therefore, when you add more than 2 employees, under the hood, Kotlin compiler uses
+//  `plus()` function to add an item to existing collection
+
+  qaDepartment -= Thomas
+
+  if (Thomas !in qaDepartment) {
+    println("${Thomas.name} no longer works here")
+  }
+
+  ++Julia
+  --Peter
+  Mark += 2500
+  Alice -= 2000
+
+  print((Alice..Mark).joinToString { it.name })
 }

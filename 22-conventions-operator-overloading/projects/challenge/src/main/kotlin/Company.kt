@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,52 +28,22 @@
  * THE SOFTWARE.
  */
 
-fun main() {
-  // your company
-  val company = Company("MyOwnCompany")
+class Company(val name: String) {
 
-  // departments
-  val developmentDepartment = Department("Development")
-  val qaDepartment = Department("Quality Assurance")
-  val hrDepartment = Department("Human Resources")
+  private val departments: ArrayList<Department> = arrayListOf()
 
-  // employees
-  var Julia = Employee(company, "Julia", 100_000)
-  var John = Employee(company, "John", 86_000)
-  var Peter = Employee(company, "Peter", 100_000)
+  val allEmployees: List<Employee>
+    get() = arrayListOf<Employee>().apply {
+      departments.forEach { addAll(it.employees) }
+      sort()
+    }
 
-  var Sandra = Employee(company, "Sandra", 75_000)
-  var Thomas = Employee(company, "Thomas", 73_000)
-  var Alice = Employee(company, "Alice", 70_000)
-
-  var Bernadette = Employee(company, "Bernadette", 66_000)
-  var Mark = Employee(company, "Mark", 66_000)
-
-  company += developmentDepartment
-  company += qaDepartment
-  company += hrDepartment
-
-  developmentDepartment += Julia
-  developmentDepartment += John
-  developmentDepartment += Peter
-
-  qaDepartment += Sandra
-  qaDepartment += Thomas
-  qaDepartment += Alice
-
-  hrDepartment += Bernadette
-  hrDepartment += Mark
-
-  qaDepartment -= Thomas
-
-  if (Thomas !in qaDepartment) {
-    println("${Thomas.name} no longer works here")
+  operator fun plusAssign(department: Department) {
+    departments.add(department)
   }
 
-  ++Julia
-  --Peter
-  Mark += 2500
-  Alice -= 2000
+  operator fun minusAssign(department: Department) {
+    departments.remove(department)
+  }
 
-  print((Alice..Mark).joinToString { it.name })
 }
