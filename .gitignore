@@ -289,3 +289,5 @@ DerivedData/
 /*.gcno
 16-enum-classes/projects/starter-2/gradle
 16-enum-classes/projects/starter-2/.idea
+16-enum-classes/projects/starter/.idea
+16-enum-classes/projects/starter/gradle
