@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		005AE3BA2321BD2D005F1285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005AE3B92321BD2D005F1285 /* AppDelegate.swift */; };
-		005AE3BC2321BD2D005F1285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005AE3BB2321BD2D005F1285 /* ViewController.swift */; };
-		005AE3BF2321BD2D005F1285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005AE3BD2321BD2D005F1285 /* Main.storyboard */; };
-		005AE3C12321BD2F005F1285 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005AE3C02321BD2F005F1285 /* Assets.xcassets */; };
-		005AE3C42321BD2F005F1285 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005AE3C22321BD2F005F1285 /* LaunchScreen.storyboard */; };
-		005AE3CC2321C033005F1285 /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005AE3CB2321C033005F1285 /* shared.framework */; };
-		005AE3CD2321C033005F1285 /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 005AE3CB2321C033005F1285 /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		273D440A25C7761C00B0B8AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D440925C7761C00B0B8AA /* AppDelegate.swift */; };
+		273D440C25C7761C00B0B8AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D440B25C7761C00B0B8AA /* SceneDelegate.swift */; };
+		273D440E25C7761C00B0B8AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D440D25C7761C00B0B8AA /* ContentView.swift */; };
+		273D441025C7761E00B0B8AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273D440F25C7761E00B0B8AA /* Assets.xcassets */; };
+		273D441325C7761E00B0B8AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273D441225C7761E00B0B8AA /* Preview Assets.xcassets */; };
+		273D441625C7761E00B0B8AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273D441425C7761E00B0B8AA /* LaunchScreen.storyboard */; };
+		273D442025C77C2300B0B8AA /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273D441F25C77C2300B0B8AA /* shared.framework */; };
+		273D442125C77C2300B0B8AA /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 273D441F25C77C2300B0B8AA /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		005AE3CE2321C033005F1285 /* Embed Frameworks */ = {
+		273D442225C77C2300B0B8AA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				005AE3CD2321C033005F1285 /* shared.framework in Embed Frameworks */,
+				273D442125C77C2300B0B8AA /* shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,70 +32,90 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		005AE3B62321BD2D005F1285 /* HelloKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		005AE3B92321BD2D005F1285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		005AE3BB2321BD2D005F1285 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		005AE3BE2321BD2D005F1285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		005AE3C02321BD2F005F1285 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		005AE3C32321BD2F005F1285 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		005AE3C52321BD2F005F1285 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		005AE3CB2321C033005F1285 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
+		273D440625C7761C00B0B8AA /* HelloKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		273D440925C7761C00B0B8AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		273D440B25C7761C00B0B8AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		273D440D25C7761C00B0B8AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		273D440F25C7761E00B0B8AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		273D441225C7761E00B0B8AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		273D441525C7761E00B0B8AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		273D441725C7761E00B0B8AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		273D441E25C77C0600B0B8AA /* xcode-frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "xcode-frameworks"; path = "../../shared/build/xcode-frameworks"; sourceTree = "<group>"; };
+		273D441F25C77C2300B0B8AA /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		005AE3B32321BD2D005F1285 /* Frameworks */ = {
+		273D440325C7761C00B0B8AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005AE3CC2321C033005F1285 /* shared.framework in Frameworks */,
+				273D442025C77C2300B0B8AA /* shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		005AE3AD2321BD2D005F1285 = {
+		273D43FD25C7761C00B0B8AA = {
 			isa = PBXGroup;
 			children = (
-				005AE3CB2321C033005F1285 /* shared.framework */,
-				005AE3B82321BD2D005F1285 /* HelloKMP */,
-				005AE3B72321BD2D005F1285 /* Products */,
+				273D440825C7761C00B0B8AA /* HelloKMP */,
+				273D440725C7761C00B0B8AA /* Products */,
+				273D441D25C77C0600B0B8AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		005AE3B72321BD2D005F1285 /* Products */ = {
+		273D440725C7761C00B0B8AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				005AE3B62321BD2D005F1285 /* HelloKMP.app */,
+				273D440625C7761C00B0B8AA /* HelloKMP.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		005AE3B82321BD2D005F1285 /* HelloKMP */ = {
+		273D440825C7761C00B0B8AA /* HelloKMP */ = {
 			isa = PBXGroup;
 			children = (
-				005AE3B92321BD2D005F1285 /* AppDelegate.swift */,
-				005AE3BB2321BD2D005F1285 /* ViewController.swift */,
-				005AE3BD2321BD2D005F1285 /* Main.storyboard */,
-				005AE3C02321BD2F005F1285 /* Assets.xcassets */,
-				005AE3C22321BD2F005F1285 /* LaunchScreen.storyboard */,
-				005AE3C52321BD2F005F1285 /* Info.plist */,
+				273D440925C7761C00B0B8AA /* AppDelegate.swift */,
+				273D440B25C7761C00B0B8AA /* SceneDelegate.swift */,
+				273D440D25C7761C00B0B8AA /* ContentView.swift */,
+				273D440F25C7761E00B0B8AA /* Assets.xcassets */,
+				273D441425C7761E00B0B8AA /* LaunchScreen.storyboard */,
+				273D441725C7761E00B0B8AA /* Info.plist */,
+				273D441125C7761E00B0B8AA /* Preview Content */,
 			);
 			path = HelloKMP;
+			sourceTree = "<group>";
+		};
+		273D441125C7761E00B0B8AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				273D441225C7761E00B0B8AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		273D441D25C77C0600B0B8AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				273D441F25C77C2300B0B8AA /* shared.framework */,
+				273D441E25C77C0600B0B8AA /* xcode-frameworks */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		005AE3B52321BD2D005F1285 /* HelloKMP */ = {
+		273D440525C7761C00B0B8AA /* HelloKMP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 005AE3C82321BD2F005F1285 /* Build configuration list for PBXNativeTarget "HelloKMP" */;
+			buildConfigurationList = 273D441A25C7761E00B0B8AA /* Build configuration list for PBXNativeTarget "HelloKMP" */;
 			buildPhases = (
-				005AE3CF2321C1A7005F1285 /* ShellScript */,
-				005AE3B22321BD2D005F1285 /* Sources */,
-				005AE3B32321BD2D005F1285 /* Frameworks */,
-				005AE3B42321BD2D005F1285 /* Resources */,
-				005AE3CE2321C033005F1285 /* Embed Frameworks */,
+				273D442325C77CAD00B0B8AA /* ShellScript */,
+				273D440225C7761C00B0B8AA /* Sources */,
+				273D440325C7761C00B0B8AA /* Frameworks */,
+				273D440425C7761C00B0B8AA /* Resources */,
+				273D442225C77C2300B0B8AA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,25 +123,25 @@
 			);
 			name = HelloKMP;
 			productName = HelloKMP;
-			productReference = 005AE3B62321BD2D005F1285 /* HelloKMP.app */;
+			productReference = 273D440625C7761C00B0B8AA /* HelloKMP.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		005AE3AE2321BD2D005F1285 /* Project object */ = {
+		273D43FE25C7761C00B0B8AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Razeware;
 				TargetAttributes = {
-					005AE3B52321BD2D005F1285 = {
-						CreatedOnToolsVersion = 10.3;
+					273D440525C7761C00B0B8AA = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 005AE3B12321BD2D005F1285 /* Build configuration list for PBXProject "HelloKMP" */;
+			buildConfigurationList = 273D440125C7761C00B0B8AA /* Build configuration list for PBXProject "HelloKMP" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,31 +149,31 @@
 				en,
 				Base,
 			);
-			mainGroup = 005AE3AD2321BD2D005F1285;
-			productRefGroup = 005AE3B72321BD2D005F1285 /* Products */;
+			mainGroup = 273D43FD25C7761C00B0B8AA;
+			productRefGroup = 273D440725C7761C00B0B8AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				005AE3B52321BD2D005F1285 /* HelloKMP */,
+				273D440525C7761C00B0B8AA /* HelloKMP */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		005AE3B42321BD2D005F1285 /* Resources */ = {
+		273D440425C7761C00B0B8AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005AE3C42321BD2F005F1285 /* LaunchScreen.storyboard in Resources */,
-				005AE3C12321BD2F005F1285 /* Assets.xcassets in Resources */,
-				005AE3BF2321BD2D005F1285 /* Main.storyboard in Resources */,
+				273D441625C7761E00B0B8AA /* LaunchScreen.storyboard in Resources */,
+				273D441325C7761E00B0B8AA /* Preview Assets.xcassets in Resources */,
+				273D441025C7761E00B0B8AA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		005AE3CF2321C1A7005F1285 /* ShellScript */ = {
+		273D442325C77CAD00B0B8AA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -172,30 +193,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		005AE3B22321BD2D005F1285 /* Sources */ = {
+		273D440225C7761C00B0B8AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005AE3BC2321BD2D005F1285 /* ViewController.swift in Sources */,
-				005AE3BA2321BD2D005F1285 /* AppDelegate.swift in Sources */,
+				273D440A25C7761C00B0B8AA /* AppDelegate.swift in Sources */,
+				273D440C25C7761C00B0B8AA /* SceneDelegate.swift in Sources */,
+				273D440E25C7761C00B0B8AA /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		005AE3BD2321BD2D005F1285 /* Main.storyboard */ = {
+		273D441425C7761E00B0B8AA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				005AE3BE2321BD2D005F1285 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		005AE3C22321BD2F005F1285 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				005AE3C32321BD2F005F1285 /* Base */,
+				273D441525C7761E00B0B8AA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -203,7 +217,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		005AE3C62321BD2F005F1285 /* Debug */ = {
+		273D441825C7761E00B0B8AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +249,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -254,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -264,7 +277,7 @@
 			};
 			name = Debug;
 		};
-		005AE3C72321BD2F005F1285 /* Release */ = {
+		273D441925C7761E00B0B8AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,7 +309,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -309,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -319,38 +331,42 @@
 			};
 			name = Release;
 		};
-		005AE3C92321BD2F005F1285 /* Debug */ = {
+		273D441B25C7761E00B0B8AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HelloKMP/Preview Content\"";
 				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../shared/build/xcode-frameworks";
 				INFOPLIST_FILE = HelloKMP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.HelloKMP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywennderlich.HelloKMP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		005AE3CA2321BD2F005F1285 /* Release */ = {
+		273D441C25C7761E00B0B8AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HelloKMP/Preview Content\"";
 				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../shared/build/xcode-frameworks";
 				INFOPLIST_FILE = HelloKMP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.HelloKMP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywennderlich.HelloKMP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,25 +376,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		005AE3B12321BD2D005F1285 /* Build configuration list for PBXProject "HelloKMP" */ = {
+		273D440125C7761C00B0B8AA /* Build configuration list for PBXProject "HelloKMP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				005AE3C62321BD2F005F1285 /* Debug */,
-				005AE3C72321BD2F005F1285 /* Release */,
+				273D441825C7761E00B0B8AA /* Debug */,
+				273D441925C7761E00B0B8AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		005AE3C82321BD2F005F1285 /* Build configuration list for PBXNativeTarget "HelloKMP" */ = {
+		273D441A25C7761E00B0B8AA /* Build configuration list for PBXNativeTarget "HelloKMP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				005AE3C92321BD2F005F1285 /* Debug */,
-				005AE3CA2321BD2F005F1285 /* Release */,
+				273D441B25C7761E00B0B8AA /* Debug */,
+				273D441C25C7761E00B0B8AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 005AE3AE2321BD2D005F1285 /* Project object */;
+	rootObject = 273D43FE25C7761C00B0B8AA /* Project object */;
 }
