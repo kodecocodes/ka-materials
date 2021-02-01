@@ -288,3 +288,5 @@ DerivedData/
 ## Gcc Patch
 /*.gcno
 24-scripting-with-kotlin/projects/starter/.idea
+24-scripting-with-kotlin/projects/challenge/.idea
+24-scripting-with-kotlin/projects/final/.idea
