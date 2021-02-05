@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,7 +33,7 @@ fun main() {
   // CONVERTING TYPES
   var integer: Int = 100
   var decimal: Double = 12.5
-  // integer = decimal // Error:(34, 15) Kotlin: Type mismatch: inferred type is Double but Int was expected
+  // integer = decimal // Type mismatch. Required: Int. Found: Double.
   integer = decimal.toInt()
 
   val hourlyRate: Double = 19.5
