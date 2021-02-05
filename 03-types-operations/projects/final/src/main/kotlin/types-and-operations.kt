@@ -33,7 +33,7 @@ fun main() {
   // CONVERTING TYPES
   var integer: Int = 100
   var decimal: Double = 12.5
-  // integer = decimal // Error:(34, 15) Kotlin: Type mismatch: inferred type is Double but Int was expected
+  // integer = decimal // Type mismatch. Required: Int. Found: Double.
   integer = decimal.toInt()
 
   val hourlyRate: Double = 19.5
