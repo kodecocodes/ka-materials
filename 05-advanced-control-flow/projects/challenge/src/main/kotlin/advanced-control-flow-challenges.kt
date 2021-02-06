@@ -135,7 +135,7 @@ when {
  Print a countdown from 10 to 0.  (Note: do not use the downTo method)
  */
   for (i in 0..10) {
-    print(10 - i)
+    println(10 - i)
   }
 
 /*:
