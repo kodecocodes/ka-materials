@@ -140,7 +140,7 @@ fun main() {
 
 
   // WHILE LOOPS
-  //while true { // Commented out as this will loop forever
+  //while (true) { // Commented out as this will loop forever
   //}
 
   // Made up sequence (it's powers of 2 minus 1, i.e. 3, 7, 15, 31, 63, etc)
