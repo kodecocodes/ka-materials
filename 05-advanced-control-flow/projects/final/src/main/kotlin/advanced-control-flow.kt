@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -175,7 +175,7 @@ fun main() {
     y == 0 && z == 0 -> println("On the x-axis at x = $x")
     x == 0 && z == 0 -> println("On the y-axis at y = $y")
     x == 0 && y == 0 -> println("On the z-axis at z = $z")
-    else -> println("Somewhere in space at x = $x, y = $y, z = $z")
+    else -> println("In space at x = $x, y = $y, z = $z")
   }
 
   when {
