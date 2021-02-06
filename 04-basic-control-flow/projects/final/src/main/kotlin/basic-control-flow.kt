@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -140,7 +140,7 @@ fun main() {
 
 
   // WHILE LOOPS
-  //while true { // Commented out as this will loop forever
+  //while (true) { // Commented out as this will loop forever
   //}
 
   // Made up sequence (it's powers of 2 minus 1, i.e. 3, 7, 15, 31, 63, etc)

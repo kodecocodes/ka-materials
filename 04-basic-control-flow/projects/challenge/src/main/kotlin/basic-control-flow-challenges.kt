@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,6 @@
 
 import kotlin.math.log2
 import kotlin.math.sqrt
-
 
 fun main() {
 
@@ -113,7 +112,7 @@ fun main() {
     val x1 = (-b + sqrt(d)) / (2 * a)
     val x2 = (-b - sqrt(d)) / (2 * a)
     println("The solutions are $x1 and $x2")
-  } else if (d.equals(0)) {
+  } else if (d.equals(0.0)) {
     val x = -b / (2 * a)
     println("Both solutions are $x")
   } else {
@@ -160,10 +159,10 @@ fun main() {
 
   // Solution without using logarithms:
   var dividend = number
-  while ("%.0f".format(dividend / 10.0).toInt() == 0) {  // println("%.0f".format(28.0 % 10.0))
+  while (dividend.toInt() % 2 == 0) {
     dividend /= 2
   }
-  if (dividend.equals(1)) {
+  if (dividend.equals(1.0)) {
     println("$number is a power of 2")
   } else {
     println("$number is not a power of 2")
