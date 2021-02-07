@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,17 +30,4 @@
 
 fun main() {
 
-  val myFavoriteSong: String? = null
-
-//  val parsedInt = "10".toIntOrNull()
-//  println(parsedInt) // > 10
-
-  val parsedInt = "dog".toIntOrNull()
-  println(parsedInt) // > null
-
-  if (myFavoriteSong != null) {
-    println("My favorite song is $myFavoriteSong.")
-  } else {
-    println("I don’t have a favorite song.")
-  }
 }
