@@ -44,6 +44,6 @@ fun main() {
   val scores = listOf(2, 2, 8, 6)
 
   for ((index, player) in players.withIndex()) {
-    println("$player score is ${scores[index]}")
+    println("$player's score is ${scores[index]}")
   }
 }
