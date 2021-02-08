@@ -157,6 +157,10 @@ fun main() {
   println(someSet.first())
   println(someSet.last())
 
+  for (number in someSet) {
+    println(number)
+  }
+
   // Adding and removing elements
 
   someSet.add(5)
