@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -94,17 +94,17 @@ fun main(args: Array<String>) {
 
   println(players.last()) // > Dan
 
-  val minPlayer = players.min()
+  val minPlayer = players.minOrNull()
   minPlayer.let {
     println("$minPlayer will start") // > Alice will start
   }
 
   println(arrayOf(2, 3, 1).first())
   // > 2
-  println(arrayOf(2, 3, 1).min())
+  println(arrayOf(2, 3, 1).minOrNull())
   // > 1
 
-  val maxPlayer = players.max()
+  val maxPlayer = players.maxOrNull()
   if (maxPlayer != null) {
     println("$maxPlayer is the MAX") // > Dan is the MAX
   }
