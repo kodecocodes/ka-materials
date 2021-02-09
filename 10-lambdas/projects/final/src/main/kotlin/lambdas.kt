@@ -34,8 +34,7 @@ fun main() {
 
   var multiplyLambda: (Int, Int) -> Int
 
-  multiplyLambda = { a: Int, b: Int ->
-    Int
+  multiplyLambda = { a: Int, b: Int -> Int
     a * b
   }
 
