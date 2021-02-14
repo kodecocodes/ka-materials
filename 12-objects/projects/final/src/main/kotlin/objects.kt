@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -73,12 +73,12 @@ class Scientist private constructor(val id: Int, val firstName: String, val last
 object ScientistRepository {
   val allScientists = mutableListOf<Scientist>()
 
-  fun addScientist(student: Scientist) {
-    allScientists.add(student)
+  fun addScientist(scientist: Scientist) {
+    allScientists.add(scientist)
   }
 
-  fun removeScientist(student: Scientist) {
-    allScientists.remove(student)
+  fun removeScientist(scientist: Scientist) {
+    allScientists.remove(scientist)
   }
 
   fun listAllScientists() {
