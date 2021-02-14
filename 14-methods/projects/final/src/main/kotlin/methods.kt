@@ -74,7 +74,7 @@ fun main() {
 
   // Introducing this
 
-  class SimpleDate3(var month:String) {
+  class SimpleDate3(var month: String) {
     fun monthsUntilWinterBreak(): Int {
       return months.indexOf("December") - months.indexOf(this.month)
     }
@@ -83,7 +83,7 @@ fun main() {
   val date3 = SimpleDate3("September")
   println(date3.monthsUntilWinterBreak()) // > 3
 
-  class SimpleDate4(var month:String) {
+  class SimpleDate4(var month: String) {
     fun monthsUntilWinterBreak(): Int {
       return months.indexOf("December") - months.indexOf(month)
     }
