@@ -64,7 +64,9 @@ class TV(var height: Double, var width: Double) {
     set(value) {
       val ratioWidth = 16.0
       val ratioHeight = 9.0
-      val ratioDiagonal = Math.sqrt(ratioWidth * ratioWidth + ratioHeight * ratioHeight)
+      val ratioDiagonal = Math.sqrt(
+        ratioWidth * ratioWidth + ratioHeight * ratioHeight
+      )
       height = value * ratioHeight / ratioDiagonal
       width = height * ratioWidth / ratioHeight
     }
@@ -72,7 +74,7 @@ class TV(var height: Double, var width: Double) {
 
 class Level(val id: Int, var boss: String, var unlocked: Boolean) {
   companion object {
-    var highestLevel = 1
+    @JvmStatic var highestLevel = 1
   }
 }
 
@@ -80,8 +82,8 @@ class DelegatedLevel(val id: Int, var boss: String) {
   companion object {
     var highestLevel = 1
   }
-  var unlocked: Boolean by Delegates.observable(false) {
-      _, old, new ->
+
+  var unlocked: Boolean by Delegates.observable(false) { _, old, new ->
     if (new && id > highestLevel) {
       highestLevel = id
     }
@@ -104,8 +106,8 @@ class LightBulb {
   companion object {
     const val maxCurrent = 40
   }
-  var current by Delegates.vetoable(0) {
-      _, _, new ->
+
+  var current by Delegates.vetoable(0) { _, _, new ->
     if (new > maxCurrent) {
       println("Current too high, falling back to previous setting.")
       false
