@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -41,13 +41,13 @@ fun main() {
   // Mini-exercise
 
   val months = arrayOf(
-      "January", "February", "March",
-      "April", "May", "June",
-      "July", "August", "September",
-      "October", "November", "December"
+    "January", "February", "March",
+    "April", "May", "June",
+    "July", "August", "September",
+    "October", "November", "December"
   )
 
-  class SimpleDate5(var month:String) {
+  class SimpleDate5(var month: String) {
     val monthsUntilWinterBreak: Int
       get() = months.indexOf("December") - months.indexOf(month)
   }
