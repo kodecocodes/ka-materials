@@ -73,12 +73,12 @@ class Scientist private constructor(val id: Int, val firstName: String, val last
 object ScientistRepository {
   val allScientists = mutableListOf<Scientist>()
 
-  fun addScientist(student: Scientist) {
-    allScientists.add(student)
+  fun addScientist(scientist: Scientist) {
+    allScientists.add(scientist)
   }
 
-  fun removeScientist(student: Scientist) {
-    allScientists.remove(student)
+  fun removeScientist(scientist: Scientist) {
+    allScientists.remove(scientist)
   }
 
   fun listAllScientists() {
