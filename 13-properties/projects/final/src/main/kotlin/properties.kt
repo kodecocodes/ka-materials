@@ -1,22 +1,22 @@
 /*
- * Copyright (c) 2019 Razeware LLC
- * 
+ * Copyright (c) 2021 Razeware LLC
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
- * distribute, sublicense, create a derivative work, and/or sell copies of the 
- * Software in any work that is designed, intended, or marketed for pedagogical or 
- * instructional purposes related to programming, coding, application development, 
+ *
+ * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+ * distribute, sublicense, create a derivative work, and/or sell copies of the
+ * Software in any work that is designed, intended, or marketed for pedagogical or
+ * instructional purposes related to programming, coding, application development,
  * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works, 
+ * merger, publication, distribution, sublicensing, creation of derivative works,
  * or sale is expressly withheld.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -64,7 +64,9 @@ class TV(var height: Double, var width: Double) {
     set(value) {
       val ratioWidth = 16.0
       val ratioHeight = 9.0
-      val ratioDiagonal = Math.sqrt(ratioWidth * ratioWidth + ratioHeight * ratioHeight)
+      val ratioDiagonal = Math.sqrt(
+        ratioWidth * ratioWidth + ratioHeight * ratioHeight
+      )
       height = value * ratioHeight / ratioDiagonal
       width = height * ratioWidth / ratioHeight
     }
@@ -72,7 +74,7 @@ class TV(var height: Double, var width: Double) {
 
 class Level(val id: Int, var boss: String, var unlocked: Boolean) {
   companion object {
-    var highestLevel = 1
+    @JvmStatic var highestLevel = 1
   }
 }
 
@@ -80,8 +82,8 @@ class DelegatedLevel(val id: Int, var boss: String) {
   companion object {
     var highestLevel = 1
   }
-  var unlocked: Boolean by Delegates.observable(false) {
-    _, old, new ->
+
+  var unlocked: Boolean by Delegates.observable(false) { _, old, new ->
     if (new && id > highestLevel) {
       highestLevel = id
     }
@@ -104,8 +106,8 @@ class LightBulb {
   companion object {
     const val maxCurrent = 40
   }
-  var current by Delegates.vetoable(0) {
-    _, _, new ->
+
+  var current by Delegates.vetoable(0) { _, _, new ->
     if (new > maxCurrent) {
       println("Current too high, falling back to previous setting.")
       false
