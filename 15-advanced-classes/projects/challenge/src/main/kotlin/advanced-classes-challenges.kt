@@ -29,9 +29,9 @@
  */
 
 sealed class Resource {
-  class Success(data: String): Resource()
-  class Loading: Resource()
-  class Error(error: String): Resource()
+  class Success(data: String) : Resource()
+  class Loading : Resource()
+  class Error(error: String) : Resource()
 }
 
 fun main() {
@@ -91,14 +91,17 @@ Create a subclass of StudentAthlete called StudentBaseballPlayer and include pro
     fun fullName() = "$firstName $lastName"
   }
 
-  open class Student(firstName: String, lastName: String, var grades: MutableList<Grade> = mutableListOf<Grade>())
-    : Person(firstName, lastName) {
+  open class Student(
+    firstName: String,
+    lastName: String,
+    var grades: MutableList<Grade> = mutableListOf<Grade>()
+  ) : Person(firstName, lastName) {
     open fun recordGrade(grade: Grade) {
       grades.add(grade)
     }
   }
 
-  open class StudentAthlete(firstName: String, lastName: String): Student(firstName, lastName) {
+  open class StudentAthlete(firstName: String, lastName: String) : Student(firstName, lastName) {
     val failedClasses = mutableListOf<Grade>()
     val sports = mutableListOf<Grade>()
 
@@ -119,7 +122,8 @@ Create a subclass of StudentAthlete called StudentBaseballPlayer and include pro
     lastName: String,
     val position: String,
     val number: Int,
-    val battingAverage: Double): StudentAthlete(firstName, lastName)
+    val battingAverage: Double
+  ) : StudentAthlete(firstName, lastName)
 
   /*
   Benefits:

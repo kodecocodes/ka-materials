@@ -184,7 +184,7 @@ fun main() {
       get() = failedClasses.size < 3
   }
 
-  //// Allowing inheritance
+  //// Preventing inheritance
 
   class FinalStudent(firstName: String, lastName: String): Person(firstName, lastName)
   //class FinalStudentAthlete(firstName: String, lastName: String): FinalStudent(firstName, lastName) // Build error!
