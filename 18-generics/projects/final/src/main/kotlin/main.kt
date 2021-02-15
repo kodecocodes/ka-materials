@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -131,10 +131,6 @@ class Mover<T: Checkable>(
       println("But we need to talk about your:${thingsWhichFailedCheck.toBulletedList()}")
     }
   }
-
-  fun fitsInTruck(itemHeight: Int): Boolean {
-    return truckHeightInInches > itemHeight
-  }
 }
 
 class CheapThing(
@@ -163,27 +159,6 @@ class BreakableThing(
 
   override fun checkIsOK(): Boolean {
     return !isBroken
-  }
-}
-
-class Vehicle (
-    val brandName: String,
-    val modelName: String,
-    val heightInInches: Int
-): Checkable {
-
-  var heightCheckFunction: ((Int) -> Boolean)? = null
-
-  override fun toString(): String {
-    return "$brandName $modelName"
-  }
-
-  override fun checkIsOK(): Boolean {
-    heightCheckFunction?.let {
-      return it.invoke(heightInInches)
-    }
-
-    throw RuntimeException("You must provide a height check function!")
   }
 }
 
@@ -229,62 +204,6 @@ class CardboardBox: Container<BreakableThing> {
   }
 }
 
-class ShippingContainer: Container<Vehicle> {
-  var vehicle: Vehicle? = null
-
-  override fun contents(): List<Vehicle> {
-    var list = mutableListOf<Vehicle>()
-    vehicle?.let { list.add(it) }
-    return list
-  }
-
-  override fun canAddAnotherItem(): Boolean {
-    return vehicle == null
-  }
-
-  override fun addItem(item: Vehicle) {
-    this.vehicle = item
-  }
-
-  override fun canRemoveAnotherItem(): Boolean {
-    return vehicle != null
-  }
-  override fun removeItem(): Vehicle {
-    val itemToReturn = vehicle!!
-    vehicle = null
-    return itemToReturn
-  }
-
-  override fun getAnother(): Container<Vehicle> {
-    return ShippingContainer()
-  }
-}
-
-interface PersonWithName {
-  val firstName: String
-  val lastName: String
-}
-
-class Classmate(
-    override val firstName: String,
-    override val lastName: String
-) : PersonWithName
-
-class Relative (
-    override val firstName: String,
-    override val lastName: String,
-    val relationship: String
-): PersonWithName {
-
-  override fun toString(): String {
-    return "$relationship: $firstName $lastName"
-  }
-}
-
-fun <T: PersonWithName> List<T>.printNames() {
-  forEach { println("${it.firstName} ${it.lastName}") }
-}
-
 fun main() {
   val names = listOf("Bob", "Carol", "Ted", "Alice")
   println("Names: ${names.toBulletedList()}")
@@ -312,25 +231,6 @@ fun main() {
 
   println("Values for keys with E: ${valuesForKeysWithE.toBulletedList()}")
 
-  val classmates = listOf(
-      Classmate("Ralph", "Wiggum"),
-      Classmate("Janey", "Powell"),
-      Classmate("Sherri", "Mackleberry"),
-      Classmate("Terri", "Mackleberry")
-  )
-
-  println("Classmates:")
-  classmates.printNames()
-
-  val family = listOf(
-      Relative("Homer", "Simpson", "Father"),
-      Relative("Marge", "Simpson", "Mother"),
-      Relative("Bart", "Simpson", "Brother"),
-      Relative("Maggie", "Simpson", "Sister")
-  )
-  println("Family:")
-  family.printNames()
-
 
   val cheapThings = listOf(
       CheapThing("Cinder Block table"),
@@ -357,32 +257,6 @@ fun main() {
 
   expensiveMover.moveEverythingIntoNewPlace()
   expensiveMover.finishMove()
-
-  val vehicles = listOf(
-      Vehicle("Yamaha", "Vino", 40),
-      Vehicle("Toyota", "Corolla", 58),
-      Vehicle("Freightliner", "Cascadia", 150)
-  )
-
-  val vehicleMover = Mover(vehicles)
-
-  vehicles.forEach { it.heightCheckFunction = vehicleMover::fitsInTruck }
-
-  vehicleMover.moveEverythingToTruck(ShippingContainer())
-
-  vehicleMover.moveEverythingIntoNewPlace()
-  vehicleMover.finishMove()
-
-  var items = mutableListOf<Checkable>()
-  items.addAll(cheapThings)
-  items.addAll(breakableThings)
-  items.addAll(vehicles)
-  val everythingMover = Mover(items, 200)
-  vehicles.forEach { it.heightCheckFunction = everythingMover::fitsInTruck }
-
-  everythingMover.moveEverythingToTruck(null)
-  everythingMover.moveEverythingIntoNewPlace()
-  everythingMover.finishMove()
 
   val ints = listOf(1, 2, 3)
   val numbers: List<Number> = ints
