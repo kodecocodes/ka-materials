@@ -1,22 +1,22 @@
 /*
- * Copyright (c) 2019 Razeware LLC
- * 
+ * Copyright (c) 2021 Razeware LLC
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
- * distribute, sublicense, create a derivative work, and/or sell copies of the 
- * Software in any work that is designed, intended, or marketed for pedagogical or 
- * instructional purposes related to programming, coding, application development, 
+ *
+ * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+ * distribute, sublicense, create a derivative work, and/or sell copies of the
+ * Software in any work that is designed, intended, or marketed for pedagogical or
+ * instructional purposes related to programming, coding, application development,
  * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works, 
+ * merger, publication, distribution, sublicensing, creation of derivative works,
  * or sale is expressly withheld.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -29,9 +29,9 @@
  */
 
 sealed class Resource {
-  class Success(data: String): Resource()
-  class Loading: Resource()
-  class Error(error: String): Resource()
+  class Success(data: String) : Resource()
+  class Loading : Resource()
+  class Error(error: String) : Resource()
 }
 
 fun main() {
@@ -91,14 +91,17 @@ Create a subclass of StudentAthlete called StudentBaseballPlayer and include pro
     fun fullName() = "$firstName $lastName"
   }
 
-  open class Student(firstName: String, lastName: String, var grades: MutableList<Grade> = mutableListOf<Grade>())
-    : Person(firstName, lastName) {
+  open class Student(
+    firstName: String,
+    lastName: String,
+    var grades: MutableList<Grade> = mutableListOf<Grade>()
+  ) : Person(firstName, lastName) {
     open fun recordGrade(grade: Grade) {
       grades.add(grade)
     }
   }
 
-  open class StudentAthlete(firstName: String, lastName: String): Student(firstName, lastName) {
+  open class StudentAthlete(firstName: String, lastName: String) : Student(firstName, lastName) {
     val failedClasses = mutableListOf<Grade>()
     val sports = mutableListOf<Grade>()
 
@@ -115,11 +118,12 @@ Create a subclass of StudentAthlete called StudentBaseballPlayer and include pro
   }
 
   class StudentBaseballPlayer(
-      firstName: String,
-      lastName: String,
-      val position: String,
-      val number: Int,
-      val battingAverage: Double): StudentAthlete(firstName, lastName)
+    firstName: String,
+    lastName: String,
+    val position: String,
+    val number: Int,
+    val battingAverage: Double
+  ) : StudentAthlete(firstName, lastName)
 
   /*
   Benefits:
