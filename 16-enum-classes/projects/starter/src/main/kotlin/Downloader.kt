@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -33,6 +33,7 @@ import kotlin.concurrent.timerTask
 import kotlin.system.exitProcess
 
 enum class DownloadState {
+  Idle,
   Starting,
   InProgress,
   Error,
@@ -42,10 +43,10 @@ enum class DownloadState {
 class Downloader {
 
   private val maxData = 100
-  var downloadState: DownloadState? = null
+  var downloadState = DownloadState.Idle
   private var fakeData: MutableList<Int> = mutableListOf()
 
-  fun downloadData(fromUrl: String, progress: (state: DownloadState?) -> Unit, completion: (error: Error?, data: List<Int>?) -> Unit) {
+  fun downloadData(fromUrl: String, progress: (state: DownloadState) -> Unit, completion: (error: Error?, data: List<Int>?) -> Unit) {
     println("\"Downloading\" from URL: ${fromUrl}")
     postProgress(progress)
     downloadState = DownloadState.Starting
@@ -62,7 +63,7 @@ class Downloader {
     }
   }
 
-  private fun postProgress(progress: (state: DownloadState?) -> Unit) {
+  private fun postProgress(progress: (state: DownloadState) -> Unit) {
     progress(downloadState)
 
     when (downloadState) {

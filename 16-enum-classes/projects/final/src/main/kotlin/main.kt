@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -40,10 +40,10 @@ enum class DayOfTheWeek(val isWeekend: Boolean = false) {
   Sunday(true);
 
   fun daysUntil(other: DayOfTheWeek): Int {
-    if (this.ordinal < other.ordinal) {
-      return other.ordinal - this.ordinal
+    return if (this.ordinal < other.ordinal) {
+      other.ordinal - this.ordinal
     } else {
-      return other.ordinal - this.ordinal + DayOfTheWeek.values().count()
+      other.ordinal - this.ordinal + DayOfTheWeek.values().count()
     }
   }
 
