@@ -287,9 +287,9 @@ DerivedData/
 
 ## Gcc Patch
 /*.gcno
-18-generics/projects/challenge/.idea
-18-generics/projects/final/.idea
-18-generics/projects/challenge/gradle
-18-generics/projects/final/gradle
-18-generics/projects/starter/.idea
-18-generics/projects/starter/gradle
+19-kotlin-java-interoperability/projects/starter/.idea
+19-kotlin-java-interoperability/projects/starter/gradle
+19-kotlin-java-interoperability/projects/challenge/gradle
+19-kotlin-java-interoperability/projects/challenge/.idea
+19-kotlin-java-interoperability/projects/final/.idea
+19-kotlin-java-interoperability/projects/final/gradle
