@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,34 +28,76 @@
  * THE SOFTWARE.
  */
 
-import exceptions.*
+import exceptions.AliensAttackException
+import exceptions.BrokenEngineException
+import exceptions.OutOfFuelException
+import exceptions.SpaceToEarthConnectionFailedException
 
-object SpacePort {
+class SpaceCraft {
 
-  fun investigateSpace(spaceCraft: SpaceCraft) {
-    try {
-      spaceCraft.launch()
-    } catch (exception: SpaceCraftException) {
-      spaceCraft.sendMessageToEarth(exception.localizedMessage)
-      spaceCraft.overhaul()
-    } catch (exception: AliensAttackException) {
-      spaceCraft.sendMessageToEarth(exception.localizedMessage)
-    } finally {
-      if (spaceCraft.isInSpace) {
-        spaceCraft.land()
-      } else {
-        investigateSpace(spaceCraft)
-      }
+  private var isConnectionAvailable: Boolean = false
+
+  private var isEngineInOrder: Boolean = false
+
+  private var fuel: Int = 0
+
+  var isInSpace: Boolean = false
+
+  fun launch() {
+    if (fuel < 5) {
+      throw OutOfFuelException()
+    }
+
+    if (!isEngineInOrder) {
+      throw BrokenEngineException()
+    }
+
+    if (!isConnectionAvailable) {
+      throw SpaceToEarthConnectionFailedException()
+    }
+
+    sendMessageToEarth("Trying to launch...")
+    fuel -= 5
+    sendMessageToEarth("I'm in space!")
+    sendMessageToEarth("I've found some extraterrestrials")
+    isInSpace = true
+    throw AliensAttackException()
+  }
+
+  private fun refuel() {
+    fuel += 5
+    sendMessageToEarth("The fuel tank is filled")
+  }
+
+  fun overhaul() {
+    if (fuel < 5) {
+      refuel()
+    }
+
+    if (!isEngineInOrder) {
+      repairEngine()
+    }
+
+    if (!isConnectionAvailable) {
+      fixConnection()
     }
   }
 
-  fun testSetup(spaceCraft: SpaceCraft) = try {
-    spaceCraft.launch()
-    true
-  } catch (exception: SpaceCraftException) {
-    false
-  } finally {
-    spaceCraft.land()
+  private fun repairEngine() {
+    isEngineInOrder = true
+    sendMessageToEarth("The engine is in order")
   }
-}
 
+  private fun fixConnection() {
+    isConnectionAvailable = true
+    sendMessageToEarth("Hello Earth! Can you hear me?")
+    sendMessageToEarth("Connection is established")
+  }
+
+  fun land() {
+    sendMessageToEarth("Landing...")
+    isInSpace = false
+  }
+
+  fun sendMessageToEarth(message: String) = println("Spacecraft to Earth: $message")
+}

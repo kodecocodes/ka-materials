@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,4 +30,4 @@
 
 package exceptions
 
-class BrokenEngineException : SpaceCraftException("The engine is broken. Can't take off")
+open class SpaceCraftException(message: String) : Exception(message)

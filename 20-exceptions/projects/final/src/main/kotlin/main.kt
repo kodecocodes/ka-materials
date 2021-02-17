@@ -1,5 +1,8 @@
+import java.lang.Exception
+import java.util.*
+
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,76 +31,28 @@
  * THE SOFTWARE.
  */
 
-import exceptions.AliensAttackException
-import exceptions.BrokenEngineException
-import exceptions.OutOfFuelException
-import exceptions.SpaceToEarthConnectionFailedException
+fun main() {
+  //  someFunction()
 
-class SpaceCraft {
+  val spaceCraft = SpaceCraft()
+  SpacePort.investigateSpace(spaceCraft)
 
-  private var isConnectionAvailable: Boolean = false
-
-  private var isEngineInOrder: Boolean = false
-
-  private var fuel: Int = 0
-
-  var isInSpace: Boolean = false
-
-  fun launch() {
-    if (fuel < 5) {
-      throw OutOfFuelException()
-    }
-
-    if (!isEngineInOrder) {
-      throw BrokenEngineException()
-    }
-
-    if (!isConnectionAvailable) {
-      throw SpaceToEarthConnectionFailedException()
-    }
-
-    sendMessageToEarth("Trying to launch...")
-    fuel -= 5
-    sendMessageToEarth("I'm in space!")
-    sendMessageToEarth("I've found some extraterrestrials")
-    isInSpace = true
-    throw AliensAttackException()
+  val userInput = 1234567890L
+  val date: Date = try {
+    Date(userInput) // try to parse user input
+  } catch (exception: IllegalArgumentException) {
+    Date() // otherwise use current date
   }
+}
 
-  private fun refuel() {
-    fuel += 5
-    sendMessageToEarth("The fuel tank is filled")
-  }
+fun someFunction() {
+  anotherFunction()
+}
 
-  fun overhaul() {
-    if (fuel < 5) {
-      refuel()
-    }
+fun anotherFunction() {
+  oneMoreFunction()
+}
 
-    if (!isEngineInOrder) {
-      repairEngine()
-    }
-
-    if (!isConnectionAvailable) {
-      fixConnection()
-    }
-  }
-
-  private fun repairEngine() {
-    isEngineInOrder = true
-    sendMessageToEarth("The engine is in order")
-  }
-
-  private fun fixConnection() {
-    isConnectionAvailable = true
-    sendMessageToEarth("Hello Earth! Can you hear me?")
-    sendMessageToEarth("Connection is established")
-  }
-
-  fun land() {
-    sendMessageToEarth("Landing...")
-    isInSpace = false
-  }
-
-  fun sendMessageToEarth(message: String) = println("Spacecraft to Earth: $message")
+fun oneMoreFunction() {
+  throw Exception("Something went wrong")
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,31 +28,9 @@
  * THE SOFTWARE.
  */
 
-import exceptions.BrokenEngineException
-import exceptions.OutOfFuelException
-import exceptions.SpaceToEarthConnectionFailedException
+fun main() {
+  val spaceCraft = SpaceCraft()
+  SpacePort.investigateSpace(spaceCraft)
 
-object SpacePort {
-
-  fun investigateSpace(spaceCraft: SpaceCraft) {
-    try {
-      spaceCraft.launch()
-    } catch (exception: OutOfFuelException) {
-      spaceCraft.sendMessageToEarth(exception.localizedMessage)
-      spaceCraft.refuel()
-    } catch (exception: BrokenEngineException) {
-      spaceCraft.sendMessageToEarth(exception.localizedMessage)
-      spaceCraft.repairEngine()
-    } catch (exception: SpaceToEarthConnectionFailedException) {
-      spaceCraft.sendMessageToEarth(exception.localizedMessage)
-      spaceCraft.fixConnection()
-    } finally {
-      if (spaceCraft.isInSpace) {
-        spaceCraft.land()
-      } else {
-        investigateSpace(spaceCraft)
-      }
-    }
-  }
+  println("Test spaceCraft: ${SpacePort.testSetup(spaceCraft)}")
 }
-
