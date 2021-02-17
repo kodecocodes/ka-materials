@@ -1,3 +1,6 @@
+import java.lang.Exception
+import java.util.*
+
 /*
  * Copyright (c) 2021 Razeware LLC
  *
@@ -29,6 +32,27 @@
  */
 
 fun main() {
+  //  someFunction()
+
   val spaceCraft = SpaceCraft()
   SpacePort.investigateSpace(spaceCraft)
+
+  val userInput = 1234567890L
+  val date: Date = try {
+    Date(userInput) // try to parse user input
+  } catch (exception: IllegalArgumentException) {
+    Date() // otherwise use current date
+  }
+}
+
+fun someFunction() {
+  anotherFunction()
+}
+
+fun anotherFunction() {
+  oneMoreFunction()
+}
+
+fun oneMoreFunction() {
+  throw Exception("Something went wrong")
 }

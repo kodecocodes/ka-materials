@@ -31,4 +31,6 @@
 fun main() {
   val spaceCraft = SpaceCraft()
   SpacePort.investigateSpace(spaceCraft)
+
+  println("Test spaceCraft: ${SpacePort.testSetup(spaceCraft)}")
 }
