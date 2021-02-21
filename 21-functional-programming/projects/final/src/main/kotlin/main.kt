@@ -1,3 +1,5 @@
+import java.util.*
+
 /*
  * Copyright (c) 2021 Razeware LLC
  *
@@ -32,7 +34,82 @@ fun main() {
   val firstRobot = Robot("Experimental Space Navigation Droid")
   val secondRobot = Robot("Extra-Terrestrial Air Safety Droid")
 
-  Battlefield.beginBattle(firstRobot, secondRobot) {
-    report("Win!")
+  Battlefield.beginBattle(firstRobot, secondRobot, fun(robot) {
+    robot.report("Win!")
+  })
+
+  pow(2, 4)
+
+  var result = 0
+
+  val sum = { a: Int, b: Int ->
+    result = a + b
   }
+
+  sum(5, 18)
+
+  val string = "Hello world"
+  string.print()
+
+  val participants = arrayListOf<Robot>(
+    Robot("Extra-Terrestrial Neutralization Bot"),
+    Robot("Generic Evasion Droid"),
+    Robot("Self-Reliant War Management Device"),
+    Robot("Advanced Nullification Android"),
+    Robot("Rational Network Defense Droid"),
+    Robot("Motorized Shepherd Cyborg"),
+    Robot("Reactive Algorithm Entity"),
+    Robot("Ultimate Safety Guard Golem"),
+    Robot("Nuclear Processor Machine"),
+    Robot("Preliminary Space Navigation Machine")
+  )
+
+  val topCategory = participants
+    .filter { it.strength > 80 }
+    .take(3)
+    .sortedBy { it.name }
+
+  val random = Random()
+  val sequence = generateSequence {
+    random.nextInt(100)
+  }
+
+  sequence
+    .take(15)
+    .sorted()
+    .forEach { println(it) }
+
+  val factorial = generateSequence(1 to 1) {
+    it.first + 1 to it.second * (it.first + 1)
+  }
+
+  println(factorial.take(10).map { it.second }.last())
+}
+
+val pow: (Int, Int) -> Double = { base, exponent ->
+  Math.pow(base.toDouble(), exponent.toDouble())
+}
+
+val root: (Int) -> Double = { Math.sqrt(it.toDouble()) }
+
+fun calculateEven() {
+  var result = 0
+
+  (0..20).forEach(fun(value) {
+    if (value % 3 == 0) return
+
+    if (value % 2 == 0) result += value
+  })
+
+  println(result)
+}
+
+inline fun someFunction(crossinline body: () -> Unit) {
+  yetAnotherFunction {
+    body()
+  }
+}
+
+fun yetAnotherFunction(body: () -> Unit) {
+
 }

@@ -30,9 +30,9 @@
 
 import java.util.*
 
-class Robot(private val name: String) {
+class Robot(val name: String) {
 
-  private var strength: Int = 0
+  var strength: Int = 0
 
   private var health: Int = 100
 

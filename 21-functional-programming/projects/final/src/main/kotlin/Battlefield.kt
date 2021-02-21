@@ -38,11 +38,11 @@ object Battlefield {
   }
 
   tailrec fun battle(firstRobot: Robot, secondRobot: Robot) {
-    firstRobot.attack(secondRobot)
+    firstRobot attack secondRobot
     if (secondRobot.isAlive.not()) {
       return
     }
-    secondRobot.attack(firstRobot)
+    secondRobot attack firstRobot
     if (firstRobot.isAlive.not()) {
       return
     }

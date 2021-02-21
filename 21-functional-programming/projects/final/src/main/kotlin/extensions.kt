@@ -41,3 +41,5 @@ fun Random.randomDamage(strength: Int): Int {
 fun Random.randomBlock(): Boolean {
   return nextBoolean()
 }
+
+fun String.print() = System.out.println(this)
