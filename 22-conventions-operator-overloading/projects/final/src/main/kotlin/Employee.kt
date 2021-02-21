@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,22 +28,49 @@
  * THE SOFTWARE.
  */
 
-class Company(val name: String) {
+data class Employee(val company: Company, val name: String, var salary: Int) : Comparable<Employee> {
 
-  private val departments: ArrayList<Department> = arrayListOf()
+  operator fun plusAssign(increaseSalary: Int) {
+    salary += increaseSalary
+    println("$name got a raise to $$salary")
+  }
 
-  val allEmployees: List<Employee>
-    get() = arrayListOf<Employee>().apply {
-      departments.forEach { addAll(it.employees) }
-      sort()
+  operator fun minusAssign(decreaseSalary: Int) {
+    salary -= decreaseSalary
+    println("$name's salary decreased to $$salary")
+  }
+
+  operator fun plus(employee: Employee): List<Employee> {
+    return listOf(this, employee)
+  }
+
+  operator fun dec(): Employee {
+    salary -= 5000
+    println("$name's salary decreased to $$salary")
+    return this
+  }
+
+  operator fun inc(): Employee {
+    salary += 5000
+    println("$name got a raise to $$salary")
+    return this
+  }
+
+  operator fun rangeTo(other: Employee): List<Employee> {
+    val currentIndex = company.allEmployees.indexOf(this)
+    val otherIndex = company.allEmployees.indexOf(other)
+
+    if (currentIndex >= otherIndex) {
+      return emptyList()
     }
 
-  operator fun plusAssign(department: Department) {
-    departments.add(department)
+    return company.allEmployees.slice(currentIndex..otherIndex)
   }
 
-  operator fun minusAssign(department: Department) {
-    departments.remove(department)
+  override operator fun compareTo(other: Employee): Int {
+    return when (other) {
+      this -> 0
+      else -> name.compareTo(other.name)
+    }
   }
-
 }

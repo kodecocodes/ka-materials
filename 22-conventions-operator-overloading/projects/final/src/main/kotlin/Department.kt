@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -44,12 +44,8 @@ class Department(val name: String) : Iterable<Employee> {
     }
   }
 
-  fun hire(newEmployees: List<Employee>) {
+  fun add(newEmployees: List<Employee>) {
     employees.addAll(newEmployees)
-
-    newEmployees.forEach {
-      println("${it.name} hired to $name department")
-    }
   }
 
   operator fun get(index: Int): Employee? {
@@ -57,6 +53,12 @@ class Department(val name: String) : Iterable<Employee> {
       employees[index]
     } else {
       null
+    }
+  }
+
+  operator fun set(index: Int, employee: Employee) {
+    if (index < employees.size) {
+      employees[index] = employee
     }
   }
 
