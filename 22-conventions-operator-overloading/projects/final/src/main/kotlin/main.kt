@@ -75,5 +75,12 @@ fun main() {
   Mark += 2500
   Alice -= 2000
 
-  print((Alice..Mark).joinToString { it.name })
+  println((Alice..Mark).joinToString { it.name })
+
+  qaDepartment[0]?.plusAssign(1000)
+  qaDepartment[1] = Thomas
+
+  developmentDepartment.forEach {
+    // do something
+  }
 }
