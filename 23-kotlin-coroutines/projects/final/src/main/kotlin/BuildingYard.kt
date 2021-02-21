@@ -39,7 +39,7 @@ class BuildingYard {
       val cores = Runtime.getRuntime().availableProcessors()
 
       building.speakThroughBullhorn("The building of $name is started with $cores building machines engaged")
-      // Any other phases couldn't be started until foundation isn't ready
+      // Any other phases can't be started until foundation is ready
       building.makeFoundation().join()
 
       (1..floors).forEach {
