@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coroutines.iml" filepath="$PROJECT_DIR$/.idea/modules/coroutines.iml" group="coroutines" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coroutines_main.iml" filepath="$PROJECT_DIR$/.idea/modules/coroutines_main.iml" group="coroutines" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/coroutines_test.iml" filepath="$PROJECT_DIR$/.idea/modules/coroutines_test.iml" group="coroutines" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/starter.iml" filepath="$PROJECT_DIR$/.idea/starter.iml" />
     </modules>
   </component>
 </project>
