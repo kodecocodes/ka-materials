@@ -46,8 +46,7 @@ fun File.printFolderInfo() {
 }
 
 val current = currentFolder()
-println("Current folder: $current")
-//current.printFolderInfo()
+current.printFolderInfo()
 
 fun valueFromArgsForPrefix(prefix: String): String? {
   val arg = args.firstOrNull { it.startsWith(prefix) }
@@ -72,4 +71,3 @@ if (folderValue != null) {
   println("No path provided, printing working directory info")
   currentFolder().printFolderInfo()
 }
-

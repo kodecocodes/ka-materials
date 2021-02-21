@@ -50,10 +50,6 @@ fun File.printFolderInfo(includingHidden: Boolean) {
   println("Parent: ${this.parentFile?.name}")
 }
 
-val current = currentFolder()
-println("Current folder: $current")
-//current.printFolderInfo()
-
 fun valueFromArgsForPrefix(prefix: String): String? {
   val arg = args.firstOrNull { it.startsWith(prefix) }
 
@@ -74,6 +70,9 @@ val hiddenPrefix = "showHidden="
 val hiddenStringValue = valueFromArgsForPrefix(hiddenPrefix)
 val hiddenValue = hiddenStringValue?.toBoolean() ?: false
 
+val current = currentFolder()
+current.printFolderInfo(hiddenValue)
+
 if (folderValue != null) {
   val folder = File(folderValue).absoluteFile
   folder.printFolderInfo(hiddenValue)
@@ -81,4 +80,3 @@ if (folderValue != null) {
   println("No path provided, printing working directory info")
   currentFolder().printFolderInfo(hiddenValue)
 }
-
