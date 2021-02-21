@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,46 +28,6 @@
  * THE SOFTWARE.
  */
 
+class Robot(private val name: String) {
 
-fun main() {
-  val participants = arrayListOf<Robot>(
-      Robot("Extra-Terrestrial Neutralization Bot"),
-      Robot("Generic Evasion Droid"),
-      Robot("Self-Reliant War Management Device"),
-      Robot("Advanced Nullification Android"),
-      Robot("Rational Network Defense Droid"),
-      Robot("Motorized Shepherd Cyborg"),
-      Robot("Reactive Algorithm Entity"),
-      Robot("Ultimate Safety Guard Golem"),
-      Robot("Nuclear Processor Machine"),
-      Robot("Preliminary Space Navigation Machine")
-  )
-
-  val intermediateCategory = participants
-      .filter { it.strength in 40..80 }
-      .take(4)
-
-  if (intermediateCategory.size < 4) throw IllegalArgumentException("Invalid number of participants. Try again")
-
-  Battlefield.beginBattle(intermediateCategory[0], intermediateCategory[1]) { firstFinalist ->
-    firstFinalist.report("Passed to the final")
-    Battlefield.beginBattle(intermediateCategory[2], intermediateCategory[3]) { secondFinalist ->
-      secondFinalist.report("Passed to the final")
-      Battlefield.beginBattle(firstFinalist, secondFinalist) { winner ->
-        winner.report("Won!")
-      }
-    }
-  }
-
-  getNElementsOfFibonacci(15).forEach {
-    println(it)
-  }
-}
-
-fun getNElementsOfFibonacci(n: Int): Sequence<Int> {
-  val sequence = generateSequence(1 to 1) {
-    it.second to it.first + it.second
-  }.map { it.first }
-
-  return sequence.take(n)
 }

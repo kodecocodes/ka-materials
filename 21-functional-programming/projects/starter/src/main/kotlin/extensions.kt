@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019 Razeware LLC
+ * Copyright (c) 2021 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,47 +27,3 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-import java.util.*
-
-class Robot(private val name: String) {
-
-  private var strength: Int = 0
-
-  private var health: Int = 100
-
-  private var random: Random = Random()
-
-  var isAlive: Boolean = true
-
-  init {
-    strength = random.randomStrength()
-    report("Created (strength $strength)")
-  }
-
-  fun report(message: String) {
-    println("$name: \t$message")
-  }
-
-  private fun damage(damage: Int) {
-    val blocked = random.randomBlock()
-
-    if (blocked) {
-      report("Blocked attack")
-      return
-    }
-
-    health -= damage
-    report("Damage -$damage, health $health")
-
-    if (health <= 0) {
-      isAlive = false
-    }
-  }
-
-  infix fun attack(robot: Robot) {
-    val damage = random.randomDamage(strength)
-    robot.damage(damage)
-  }
-
-}
